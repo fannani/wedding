@@ -126,7 +126,7 @@ url(/assets/images/top-right-side.png) no-repeat top right"
             borderRadius="full"
             colorScheme="primary"
             px="10"
-            mb="20"
+            mb="28"
             onClick={() => {
               onOpen();
             }}
