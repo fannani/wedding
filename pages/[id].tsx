@@ -273,16 +273,16 @@ export default function Home({ person }) {
         <CoverSection
           person={person}
           onOpen={() => {
-            document.body.requestFullscreen();
+            // document.body.requestFullscreen();
 
-            setTimeout(() => {
-              setIsMusicPlay(true);
-              setIsShowContent(true);
-              if (isShowContent) {
-                // @ts-ignore
-                brideControl.ref.current.scrollIntoView({ behavior: 'smooth' });
-              }
-            }, 300);
+            // setTimeout(() => {
+            setIsMusicPlay(true);
+            setIsShowContent(true);
+            if (isShowContent) {
+              // @ts-ignore
+              brideControl.ref.current.scrollIntoView({ behavior: 'smooth' });
+            }
+            //  }, 300);
           }}
         />
         <Flex
