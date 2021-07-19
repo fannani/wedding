@@ -51,6 +51,7 @@ const GallerySection = React.forwardRef<any>((props, ref) => {
       >
         {photos.map((item, index) => (
           <MotionFlex
+            key={index}
             bg={`url(${item})`}
             w="100%"
             h="100%"
@@ -68,5 +69,6 @@ const GallerySection = React.forwardRef<any>((props, ref) => {
     </Flex>
   );
 });
+GallerySection.displayName = 'Gallery';
 
 export default GallerySection;
