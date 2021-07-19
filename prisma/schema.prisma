@@ -1,0 +1,44 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+datasource db {
+  // provider          = "mysql"
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+  // shadowDatabaseUrl = env("SHADOW_DATABASE_URL")
+  // planetScaleMode   = true
+}
+
+generator client {
+  provider = "prisma-client-js"
+  // previewFeatures = ["planetScaleMode"]
+}
+
+enum PresenceStatus {
+  ATTEND
+  MAYBE
+  NO
+}
+
+model Session {
+  id      Int      @id @default(autoincrement())
+  persons Person[]
+  date    DateTime
+}
+
+model Person {
+  id             String          @id @default(uuid())
+  name           String
+  phone          String
+  session        Session         @relation(fields: [sessionId], references: [id])
+  sessionId      Int
+  messages       Message[]
+  precenceStatus PresenceStatus?
+}
+
+model Message {
+  id       Int    @id @default(autoincrement())
+  text     String
+  person   Person @relation(fields: [personId], references: [id])
+  personId String
+}

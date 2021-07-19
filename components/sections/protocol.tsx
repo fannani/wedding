@@ -1,0 +1,123 @@
+import React from 'react';
+import { Flex, Box, Text } from '@chakra-ui/react';
+import Image from 'next/image';
+
+import p0114 from 'public/assets/images/protocol/01-14.png';
+import p0415 from 'public/assets/images/protocol/04-15.png';
+import p063 from 'public/assets/images/protocol/06-3.png';
+import p0510 from 'public/assets/images/protocol/05-10.png';
+import p039 from 'public/assets/images/protocol/03-9.png';
+import p0215 from 'public/assets/images/protocol/02-15.png';
+
+const ProtocolSection = () => {
+  return (
+    <Flex
+      maxW="1200px"
+      direction="column"
+      // borderRadius="25px"
+      height="100vh"
+      w="100%"
+      bg="url(/assets/images/bottom-left-side.png) no-repeat bottom left,
+url(/assets/images/bottom-right-side.png) no-repeat bottom right
+"
+      bgSize={['160px', '260px']}
+      bgColor="#EFE8E4"
+      alignItems="center"
+      pb="10"
+    >
+      <Flex direction="column">
+        <Text fontWeight="bold" fontSize="lg" mx="12">
+          Protokol Kesehatan (Covid-19)
+        </Text>
+        <Text mt="7" mx="12">
+          demi mendukung kesehatan bersama alangkah baiknya para tamu yang akan
+          hadir memenuhi protokol kesehatan sebagai berikut:
+        </Text>
+        <Flex justifyContent="center" mt="12" wrap="wrap">
+          <Flex direction="column" alignItems="center" width="111px" mx="1">
+            <Box position="relative" width="70px" height="70px">
+              <Image
+                src={p0114}
+                layout="fill"
+                objectFit="contain"
+                alt="Prokes Masker"
+              />
+            </Box>
+            <Text fontWeight="bold" textAlign="center" fontSize="xs" mt="2">
+              Cuci Tangan
+            </Text>
+          </Flex>
+          <Flex direction="column" alignItems="center" width="111px" mx="1">
+            <Box position="relative" width="70px" height="70px">
+              <Image
+                src={p0415}
+                layout="fill"
+                objectFit="contain"
+                alt="Prokes Masker"
+              />
+            </Box>
+            <Text fontWeight="bold" textAlign="center" fontSize="xs" mt="2">
+              Gunakan Masker
+            </Text>
+          </Flex>
+          <Flex direction="column" alignItems="center" width="111px" mx="1">
+            <Box position="relative" width="70px" height="70px">
+              <Image
+                src={p063}
+                layout="fill"
+                objectFit="contain"
+                alt="Prokes Masker"
+              />
+            </Box>
+            <Text fontWeight="bold" textAlign="center" fontSize="xs" mt="2">
+              Jaga Jarak
+            </Text>
+          </Flex>
+        </Flex>
+        <Flex justifyContent="center" mt="7" wrap="wrap">
+          <Flex direction="column" alignItems="center" width="111px" mx="1">
+            <Box position="relative" width="70px" height="70px">
+              <Image
+                src={p0510}
+                layout="fill"
+                objectFit="contain"
+                alt="Prokes Masker"
+              />
+            </Box>
+            <Text fontWeight="bold" textAlign="center" fontSize="xs" mt="2">
+              Tidak Berjabat Tangan
+            </Text>
+          </Flex>
+          <Flex direction="column" alignItems="center" width="111px" mx="1">
+            <Box position="relative" width="70px" height="70px">
+              <Image
+                src={p039}
+                layout="fill"
+                objectFit="contain"
+                alt="Prokes Masker"
+              />
+            </Box>
+            <Text fontWeight="bold" textAlign="center" fontSize="xs" mt="2">
+              Hindari Kerumunan
+            </Text>
+          </Flex>
+          <Flex direction="column" alignItems="center" width="111px" mx="1">
+            <Box position="relative" width="70px" height="70px">
+              <Image
+                src={p0215}
+                layout="fill"
+                objectFit="contain"
+                alt="Prokes Masker"
+              />
+            </Box>
+            <Text fontWeight="bold" textAlign="center" fontSize="xs" mt="2">
+              Gunakan Handsanitizer
+            </Text>
+          </Flex>
+        </Flex>
+      </Flex>
+    </Flex>
+  );
+};
+
+export default ProtocolSection;
