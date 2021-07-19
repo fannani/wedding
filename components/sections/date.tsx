@@ -16,10 +16,14 @@ import axios from 'axios';
 import dayjs from 'dayjs';
 import duration, { Duration } from 'dayjs/plugin/duration';
 import { useInView } from 'react-intersection-observer';
+import utc from 'dayjs/plugin/utc';
+import timezone from 'dayjs/plugin/timezone';
 import 'dayjs/locale/id';
 
-dayjs.locale('id');
+dayjs.extend(utc);
+dayjs.extend(timezone);
 
+dayjs.locale('id');
 dayjs.extend(duration);
 
 const MotionFlex = motion<FlexProps>(Flex);
@@ -49,7 +53,11 @@ const DateSection = React.forwardRef<HTMLDivElement, DateSectionProps>(
     React.useEffect(() => {
       const timer = setInterval(() => {
         const now = dayjs();
-        setEventDuration(dayjs.duration(dayjs(person.session.date).diff(now)));
+        setEventDuration(
+          dayjs.duration(
+            dayjs.tz(person.session.date, 'Asia/Jakarta').diff(now),
+          ),
+        );
       }, 1000);
       return () => clearInterval(timer);
     }, []);
