@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import Head from 'next/head';
 import {
   Box,
@@ -20,7 +20,7 @@ import GallerySection from '@/sections/gallery';
 import MessagesSection from '@/sections/messages';
 import FormSection from '@/sections/form';
 import ProtocolSection from '@/sections/protocol';
-import { motion, useViewportScroll, useAnimation } from 'framer-motion';
+import { motion, useElementScroll, useAnimation } from 'framer-motion';
 import { AiFillHeart, AiFillCalendar } from 'react-icons/ai';
 import { FaMapMarkerAlt } from 'react-icons/fa';
 import { BsFillPauseFill, BsFillPlayFill } from 'react-icons/bs';
@@ -78,7 +78,8 @@ const MenuItem = ({ icon, title, animate, onClick }) => {
 
 export default function Home({ person }) {
   const router = useRouter();
-  const { scrollY } = useViewportScroll();
+  const boxRef = useRef();
+  const { scrollY } = useElementScroll(boxRef);
   const controls = useAnimation();
   const personQuery = useQuery(
     'person',
@@ -263,49 +264,52 @@ export default function Home({ person }) {
         <title>Wedding Invitation</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Flex
-        direction="column"
-        w="100%"
-        bgColor="#cfbfb6"
-        align="center"
-        alignItems="center"
+      <Box
+        ref={boxRef}
+        height="100vh"
+        overflow={isShowContent ? 'scroll' : 'hidden'}
       >
-        <CoverSection
-          person={person}
-          onOpen={() => {
-            // document.body.requestFullscreen();
-
-            // setTimeout(() => {
-            setIsMusicPlay(true);
-            setIsShowContent(true);
-            if (isShowContent) {
-              // @ts-ignore
-              brideControl.ref.current.scrollIntoView({ behavior: 'smooth' });
-            }
-            //  }, 300);
-          }}
-        />
         <Flex
-          display={isShowContent ? 'flex' : 'none'}
           direction="column"
+          w="100%"
+          bgColor="#cfbfb6"
+          align="center"
           alignItems="center"
         >
-          <BrideSection ref={brideControl.handleRef} />
-          <EventSection ref={eventControl.handleRef} person={person} />
-          <DateSection
-            ref={dateControl.handleRef}
+          <CoverSection
             person={person}
-            personQuery={personQuery}
+            onOpen={() => {
+              document.body.requestFullscreen();
+              setTimeout(() => {
+                setIsMusicPlay(true);
+                setIsShowContent(true);
+                if (isShowContent) {
+                  // @ts-ignore
+                  brideControl.ref.current.scrollIntoView({
+                    behavior: 'smooth',
+                  });
+                }
+              }, 300);
+            }}
           />
-          <GallerySection ref={galleryControl.handleRef} />
+          <Flex direction="column" alignItems="center">
+            <BrideSection ref={brideControl.handleRef} />
+            <EventSection ref={eventControl.handleRef} person={person} />
+            <DateSection
+              ref={dateControl.handleRef}
+              person={person}
+              personQuery={personQuery}
+            />
+            <GallerySection ref={galleryControl.handleRef} />
 
-          <Flex direction="column" ref={messagesControl.handleRef} w="100%">
-            <MessagesSection />
-            <FormSection person={person} personQuery={personQuery} />
-            <ProtocolSection />
+            <Flex direction="column" ref={messagesControl.handleRef} w="100%">
+              <MessagesSection />
+              <FormSection person={person} personQuery={personQuery} />
+              <ProtocolSection />
+            </Flex>
           </Flex>
         </Flex>
-      </Flex>
+      </Box>
     </>
   );
 }
