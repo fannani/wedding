@@ -46,7 +46,7 @@ const EventSection = React.forwardRef<HTMLDivElement, EventSectionProps>(
       >
         <Box
           ref={refAnimation}
-          bgImage="url(/assets/images/bg.jpeg)"
+          bgImage="url(/assets/images/bg.jpg)"
           bgColor="#EFE8E4"
           bgPosition="center"
           height="100%"
