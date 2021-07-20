@@ -70,7 +70,7 @@ url(/assets/images/bottom-right-side.png) no-repeat bottom right
               />
             </Box>
             <Text fontWeight="bold" textAlign="center" fontSize="xs" mt="2">
-              Jaga Jarak
+              Gunakan Sabun
             </Text>
           </Flex>
         </Flex>
@@ -98,7 +98,7 @@ url(/assets/images/bottom-right-side.png) no-repeat bottom right
               />
             </Box>
             <Text fontWeight="bold" textAlign="center" fontSize="xs" mt="2">
-              Hindari Kerumunan
+              Jaga Jarak
             </Text>
           </Flex>
           <Flex direction="column" alignItems="center" width="111px" mx="1">
