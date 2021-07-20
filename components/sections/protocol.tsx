@@ -40,7 +40,7 @@ url(/assets/images/bottom-right-side.png) no-repeat bottom right
                 src={p0114}
                 layout="fill"
                 objectFit="contain"
-                alt="Prokes Masker"
+                alt="Cuci Tangan"
               />
             </Box>
             <Text fontWeight="bold" textAlign="center" fontSize="xs" mt="2">
@@ -53,7 +53,7 @@ url(/assets/images/bottom-right-side.png) no-repeat bottom right
                 src={p0415}
                 layout="fill"
                 objectFit="contain"
-                alt="Prokes Masker"
+                alt="Gunakan Masker"
               />
             </Box>
             <Text fontWeight="bold" textAlign="center" fontSize="xs" mt="2">
@@ -66,7 +66,7 @@ url(/assets/images/bottom-right-side.png) no-repeat bottom right
                 src={p063}
                 layout="fill"
                 objectFit="contain"
-                alt="Prokes Masker"
+                alt="Gunakan Sabun"
               />
             </Box>
             <Text fontWeight="bold" textAlign="center" fontSize="xs" mt="2">
@@ -81,7 +81,7 @@ url(/assets/images/bottom-right-side.png) no-repeat bottom right
                 src={p0510}
                 layout="fill"
                 objectFit="contain"
-                alt="Prokes Masker"
+                alt="Tidak Berjabat Tangan"
               />
             </Box>
             <Text fontWeight="bold" textAlign="center" fontSize="xs" mt="2">
@@ -94,7 +94,7 @@ url(/assets/images/bottom-right-side.png) no-repeat bottom right
                 src={p039}
                 layout="fill"
                 objectFit="contain"
-                alt="Prokes Masker"
+                alt="Jaga Jarak"
               />
             </Box>
             <Text fontWeight="bold" textAlign="center" fontSize="xs" mt="2">
@@ -107,7 +107,7 @@ url(/assets/images/bottom-right-side.png) no-repeat bottom right
                 src={p0215}
                 layout="fill"
                 objectFit="contain"
-                alt="Prokes Masker"
+                alt="Gunakan Handsanitizer"
               />
             </Box>
             <Text fontWeight="bold" textAlign="center" fontSize="xs" mt="2">
