@@ -46,10 +46,16 @@ const DateSection = React.forwardRef<HTMLDivElement, DateSectionProps>(
     const controls = useAnimation();
     const [refAnimation, inView] = useInView({ threshold: 0.15 });
     const animationControl = useAnimation();
+    const [status, setStatus] = React.useState<any>();
     const [eventDuration, setEventDuration] = React.useState<Duration>(
       dayjs.duration(1),
     );
 
+    React.useEffect(() => {
+      if (!personQuery.isLoading) {
+        setStatus(personQuery.data.data.precenceStatus);
+      }
+    }, [personQuery]);
     React.useEffect(() => {
       const timer = setInterval(() => {
         const now = dayjs();
@@ -67,6 +73,7 @@ const DateSection = React.forwardRef<HTMLDivElement, DateSectionProps>(
     }, [inView]);
 
     const onAttendClick = (status) => {
+      setStatus(status);
       axios.post('/api/attendance', {
         id: person.id,
         status,
@@ -235,21 +242,7 @@ url(/assets/images/top-right-side.png) no-repeat top right
               beforeSubmit: {},
             }}
           >
-            <MotionFlex
-              variants={{
-                afterSubmit: {
-                  opacity: 1,
-                },
-                beforeSubmit: {
-                  opacity: 0,
-                },
-              }}
-              // @ts-ignore
-              transition={{
-                duration: 2,
-              }}
-              direction="column"
-            >
+            <Flex direction="column">
               <MotionBox
                 position="absolute"
                 left="50%"
@@ -276,16 +269,33 @@ url(/assets/images/top-right-side.png) no-repeat top right
                   color="rgb(188, 153, 83)"
                 />
               </MotionBox>
-              <Text
-                fontSize="sm"
+              <MotionBox
                 position="absolute"
                 top="85%"
-                textAlign="center"
-                color="rgb(94, 63, 41)"
+                animate={controls}
+                initial={
+                  personQuery.data.data.precenceStatus
+                    ? 'afterSubmit'
+                    : 'beforeSubmit'
+                }
+                variants={{
+                  afterSubmit: {
+                    opacity: 1,
+                  },
+                  beforeSubmit: {
+                    opacity: 0,
+                  },
+                }}
+                // @ts-ignore
+                transition={{
+                  duration: 1,
+                }}
               >
-                {messages[personQuery.data.data.precenceStatus]}
-              </Text>
-            </MotionFlex>
+                <Text fontSize="sm" textAlign="center" color="rgb(94, 63, 41)">
+                  {status && messages[status]}
+                </Text>
+              </MotionBox>
+            </Flex>
             <MotionFlex
               direction="column"
               alignItems="center" // @ts-ignore

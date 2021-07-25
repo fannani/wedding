@@ -35,6 +35,8 @@ export const MotionBox = motion<BoxProps>(Box);
 export const MotionFlex = motion<FlexProps>(Flex);
 export const MotionText = motion<TextProps>(Text);
 
+const isDevelopment = true;
+
 const MenuItem = ({ icon, title, animate, onClick }) => {
   return (
     <MotionFlex
@@ -108,8 +110,10 @@ export default function Home({ person }) {
 
   useEffect(() => {
     if (isMusicPlay) {
-      // @ts-ignore
-      audio.play();
+      if (!isDevelopment) {
+        // @ts-ignore
+        audio.play();
+      }
     } else if (audio) {
       // @ts-ignore
       audio.pause();
@@ -279,7 +283,9 @@ export default function Home({ person }) {
           <CoverSection
             person={person}
             onOpen={() => {
-              document.body.requestFullscreen();
+              if (!isDevelopment) {
+                document.body.requestFullscreen();
+              }
               setTimeout(() => {
                 setIsMusicPlay(true);
                 setIsShowContent(true);

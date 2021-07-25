@@ -122,7 +122,7 @@ const PersonItem = ({
         transition={{ duration: 1, delay: 3 }}
         fontSize="15"
       >
-        Bpk {father} &
+        Bapak {father} &
       </MotionText>
       <MotionText
         initial="hidden"
@@ -252,15 +252,29 @@ const BrideSection = React.forwardRef((props, ref) => {
           </MotionText>
         </Flex>
         <Flex direction="column">
-          <Text
+          <MotionText
             color="rgb(94, 63, 41)"
             fontSize={['4xl', '5xl']}
             mt="5"
+            animate={control}
+            initial="hidden"
+            // @ts-ignore
+            transition={{ duration: 2, delay: 0.5 }}
+            variants={{
+              visible: {
+                opacity: 1,
+                y: 0,
+              },
+              hidden: {
+                opacity: 0,
+                y: -10,
+              },
+            }}
             fontFamily="Signatura"
             fontWeight="bold"
           >
             Mempelai
-          </Text>
+          </MotionText>
           <Flex
             flex="1"
             w="100%"

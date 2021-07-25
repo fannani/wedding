@@ -27,24 +27,27 @@ dayjs.extend(timezone);
 dayjs.locale('id');
 
 const generateMessage = (to, id) => {
-  return `Assalamu'alaikum Wr. Wb.
+  return `_Assalamu'alaikum Wr. Wb._
 Bismillahirahmanirrahim
-
-Yth. *${to}*
-
-Tanpa mengurangi rasa hormat, perkenankan kami mengundang Bapak/Ibu/Saudara/i, teman sekaligus sahabat, untuk menghadiri acara pernikahan kami :
-
-Salwa 'Aisy & Rachmad Bagus Indra K.
-
+  
+*Kepada ${to}*
+  
+Tanpa mengurangi rasa hormat, perkenankan kami mengundang Bapak/Ibu/Saudara/i, teman dan sahabat, untuk menghadiri acara resepsi pernikahan kami 
+  
+✨ *Salwatul 'Aisy & Rachmad Bagus Indra Kurniawan* ✨
+  
 Berikut link undangan kami untuk info lengkap acara, bisa kunjungi :
-
+  👇🏻
 https://salwabagus.vercel.app/${id}
+  
+Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir dan memberikan doa restu. 😊
+  
+Mohon maaf perihal undangan hanya di bagikan melalui pesan ini. _*Karena suasana pandemi diharapkan untuk menggunakan masker dan datang pada jam yang telah ditentukan.*_ Terima kasih atas perhatiannya. 🙏☺️
+  
+_Wassalamu'alaikum Wr. Wb._
 
-Merupakan suatu kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan untuk hadir dan memberikan doa restu.
-
-Mohon maaf perihal undangan hanya di bagikan melalui pesan ini. Karena suasana masih pandemi diharapkan untuk menggunakan masker dan datang pada jam yang telah ditentukan. Terima kasih atas perhatiannya.
-
-Wassalamu'alaikum Wr. Wb.`;
+Salam hangat,
+*SALWA ❤️ BAGUS*`;
 };
 
 export default function Generate({ sessions }) {
@@ -125,7 +128,11 @@ export default function Generate({ sessions }) {
 }
 
 export async function getStaticProps({ params }) {
-  const sessions = await prisma.session.findMany();
+  const sessions = await prisma.session.findMany({
+    orderBy: {
+      date: 'asc',
+    },
+  });
 
   return {
     props: {
