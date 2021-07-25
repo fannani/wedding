@@ -35,7 +35,7 @@ export const MotionBox = motion<BoxProps>(Box);
 export const MotionFlex = motion<FlexProps>(Flex);
 export const MotionText = motion<TextProps>(Text);
 
-const isDevelopment = true;
+const isDevelopment = false;
 
 const MenuItem = ({ icon, title, animate, onClick }) => {
   return (
