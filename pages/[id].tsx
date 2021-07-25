@@ -265,7 +265,7 @@ export default function Home({ person }) {
         </Box>
       </MotionFlex>
       <Head>
-        <title>Wedding Invitation</title>
+        <title>Undangan Salwa & Bagus</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Box
