@@ -4,6 +4,7 @@ import '@fontsource/montserrat';
 import { Global } from '@emotion/react';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import theme from '../theme';
+import Head from 'next/head';
 
 const queryClient = new QueryClient();
 
@@ -11,6 +12,9 @@ const App = ({ Component, pageProps }) => {
   return (
     <QueryClientProvider client={queryClient}>
       <ChakraProvider theme={theme}>
+        <Head>
+          <link href="/assets/fonts/1d03aea.ttf" rel="stylesheet" as="font" />
+        </Head>
         <Global
           styles={`@font-face{font-family:Signatura;src:url(/assets/fonts/1d03aea.ttf) format("truetype")} 
           body:fullscreen {

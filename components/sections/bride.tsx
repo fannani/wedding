@@ -49,7 +49,14 @@ const PersonItem = ({
           overflow="hidden"
           transform="translate(-50%,-50%)"
         >
-          <Image src={image} alt="Salwa" layout="fill" objectFit="cover" />
+          <Image
+            src={image}
+            alt="Salwa"
+            layout="fill"
+            quality="50"
+            sizes="30vw"
+            objectFit="cover"
+          />
         </Box>
         <Box
           width={['130px', '200px']}
@@ -57,7 +64,14 @@ const PersonItem = ({
           position="absolute"
           backgroundSize="contain"
         >
-          <Image src={decor} alt="Salwa" layout="fill" objectFit="cover" />
+          <Image
+            src={decor}
+            alt="Salwa"
+            layout="fill"
+            sizes="30vw"
+            quality="50"
+            objectFit="cover"
+          />
         </Box>
       </MotionBox>
 
