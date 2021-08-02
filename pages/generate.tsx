@@ -38,7 +38,7 @@ Tanpa mengurangi rasa hormat, perkenankan kami mengundang Bapak/Ibu/Saudara/i, t
   
 Berikut link undangan kami untuk info lengkap acara, bisa kunjungi :
   👇🏻
-https://undangansalwabagus.vercel.app/${id}
+https://salwabaguswedding.vercel.app/${id}
   
 Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir dan memberikan doa restu. 😊
   
@@ -102,7 +102,7 @@ export default function Generate({ sessions }) {
         </Center>
       </form>
       <Text display={resultId !== -1 ? 'block' : 'none'} mt="10">
-        Link : https://undangansalwabagus.vercel.app/{resultId}
+        Link : https://salwabaguswedding.vercel.app/{resultId}
       </Text>
       <Button
         display={resultId !== -1 ? 'block' : 'none'}
