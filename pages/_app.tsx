@@ -16,7 +16,7 @@ const App = ({ Component, pageProps }) => {
           <link href="/assets/fonts/1d03aea.ttf" rel="stylesheet" as="font" />
         </Head>
         <Global
-          styles={`@font-face{font-family:Signatura;src:url(/assets/fonts/1d03aea.ttf) format("truetype")} 
+          styles={`@font-face{font-family:Signatura;src:url(/assets/fonts/1d03aea.ttf);font-display:block format("truetype")} 
           body:fullscreen {
             overflow: scroll !important;
           }
