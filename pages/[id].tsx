@@ -17,6 +17,8 @@ import BrideSection from '@/sections/bride';
 import EventSection from '@/sections/event';
 import DateSection from '@/sections/date';
 import GallerySection from '@/sections/gallery';
+import GalleryLandspaceSection from '@/sections/gallery-landspace';
+
 import MessagesSection from '@/sections/messages';
 import FormSection from '@/sections/form';
 import ProtocolSection from '@/sections/protocol';
@@ -306,7 +308,8 @@ export default function Home({ person }) {
               person={person}
               personQuery={personQuery}
             />
-            <GallerySection ref={galleryControl.handleRef} />
+            <GalleryLandspaceSection ref={galleryControl.handleRef} />
+            <GallerySection />
 
             <Flex direction="column" ref={messagesControl.handleRef} w="100%">
               <MessagesSection />

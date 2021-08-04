@@ -2,14 +2,10 @@ import React from 'react';
 import { Flex, Text, Box, FlexProps } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
 
-const photos = [
-  '/assets/images/gallery/1.jpeg',
-  '/assets/images/gallery/2.jpeg',
-  '/assets/images/gallery/3.jpeg',
-];
+const photos = ['/assets/images/g21.jpeg', '/assets/images/g22.jpeg'];
 export const MotionFlex = motion<FlexProps>(Flex);
 
-const GallerySection = React.forwardRef<any>((props, ref) => {
+const GallerySection = (props) => {
   const [activeIndex, setActiveIndex] = React.useState(0);
   React.useEffect(() => {
     const interval = setInterval(() => {
@@ -28,18 +24,13 @@ const GallerySection = React.forwardRef<any>((props, ref) => {
       direction="column"
       // borderRadius="25px"
       height="100vh"
-      ref={ref}
       w="100%"
       bgSize={['160px', '260px']}
       bgColor="#EFE8E4"
       alignItems="center"
       pb="20"
-      pt="5"
       px="5"
     >
-      <Text fontFamily="Signatura" fontSize="36">
-        Galeri
-      </Text>
       <Box
         mt="3"
         height="100%"
@@ -61,14 +52,12 @@ const GallerySection = React.forwardRef<any>((props, ref) => {
             bgRepeat="no-repeat"
             bgSize="cover"
             bgPosition="center"
-          >
-            <Box>Tes</Box>
-          </MotionFlex>
+          ></MotionFlex>
         ))}
       </Box>
     </Flex>
   );
-});
+};
 GallerySection.displayName = 'Gallery';
 
 export default GallerySection;

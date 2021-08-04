@@ -174,7 +174,7 @@ const BrideSection = React.forwardRef((props, ref) => {
       direction="column"
       // borderRadius="25px"
       height="100vh"
-      minH="800px"
+      minH="870px"
       w="100%"
       //   @ts-ignore
       ref={ref}
