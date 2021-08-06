@@ -27,9 +27,6 @@ const GalleryLandspaceSection = React.forwardRef<any>((props, ref) => {
       pt="5"
       px="5"
     >
-      <Text fontFamily="Signatura" fontSize="36">
-        Galeri
-      </Text>
       <Flex
         mt="3"
         w="100%"

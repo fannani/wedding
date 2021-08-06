@@ -2,10 +2,14 @@ import React from 'react';
 import { Flex, Text, Box, FlexProps } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
 
-const photos = ['/assets/images/g21.jpeg', '/assets/images/g22.jpeg'];
+const photos = [
+  '/assets/images/g21.jpg',
+  '/assets/images/g22.jpg',
+  '/assets/images/g23.jpg',
+];
 export const MotionFlex = motion<FlexProps>(Flex);
 
-const GallerySection = (props) => {
+const GallerySection = React.forwardRef<any>((props, ref) => {
   const [activeIndex, setActiveIndex] = React.useState(0);
   React.useEffect(() => {
     const interval = setInterval(() => {
@@ -23,6 +27,7 @@ const GallerySection = (props) => {
       maxW="1200px"
       direction="column"
       // borderRadius="25px"
+      ref={ref}
       height="100vh"
       w="100%"
       bgSize={['160px', '260px']}
@@ -31,6 +36,9 @@ const GallerySection = (props) => {
       pb="20"
       px="5"
     >
+      <Text fontFamily="Signatura" fontSize="36">
+        Galeri
+      </Text>
       <Box
         mt="3"
         height="100%"
@@ -57,7 +65,7 @@ const GallerySection = (props) => {
       </Box>
     </Flex>
   );
-};
+});
 GallerySection.displayName = 'Gallery';
 
 export default GallerySection;

@@ -128,7 +128,7 @@ const EventSection = React.forwardRef<HTMLDivElement, EventSectionProps>(
                 <Link
                   target="_blank"
                   _hover={{ textDecoration: 'none' }}
-                  href="https://goo.gl/maps/CJ2BMEu1ajQHN2zx5"
+                  href="https://goo.gl/maps/uqteozBwi93KNaZ3A"
                 >
                   <Button colorScheme="primary" borderRadius="full">
                     <Flex alignItems="center">

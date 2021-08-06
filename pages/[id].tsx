@@ -308,8 +308,8 @@ export default function Home({ person }) {
               person={person}
               personQuery={personQuery}
             />
-            <GalleryLandspaceSection ref={galleryControl.handleRef} />
-            <GallerySection />
+            <GallerySection ref={galleryControl.handleRef} />
+            <GalleryLandspaceSection />
 
             <Flex direction="column" ref={messagesControl.handleRef} w="100%">
               <MessagesSection />
