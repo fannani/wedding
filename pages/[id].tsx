@@ -32,7 +32,10 @@ import { useRouter } from 'next/router';
 import prisma from 'utils/prisma';
 import { useQuery } from 'react-query';
 import axios from 'axios';
+import dayjs from 'dayjs';
+import 'dayjs/locale/id';
 
+dayjs.locale('id');
 export const MotionBox = motion<BoxProps>(Box);
 export const MotionFlex = motion<FlexProps>(Flex);
 export const MotionText = motion<TextProps>(Text);
@@ -165,6 +168,21 @@ export default function Home({ person }) {
 
   return (
     <>
+      <Head>
+        <meta property="og:title" content="Undangan Pernikahan Salwa & Bagus" />
+        <meta
+          property="og:description"
+          content={dayjs(person.session.date).format('dddd, D MMMM YYYY')}
+        />
+        <meta
+          property="og:url"
+          content={`https://salwabaguswedding.vercel.app/${person.id}`}
+        />
+        <meta
+          property="og:image"
+          content="https://salwabaguswedding.vercel.app/assets/images/g21.jpg"
+        />
+      </Head>
       <MotionBox
         position="fixed"
         top="0"
