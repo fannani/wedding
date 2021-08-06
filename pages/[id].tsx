@@ -184,8 +184,10 @@ export default function Home({ person }) {
           property="og:url"
           content={`https://salwabaguswedding.vercel.app/${person.id}`}
         />
+        <meta property="og:type" content="website" />
         <meta
-          property="og:image"
+          property="og:image:secure_url"
+          itemProp="image"
           content="https://salwabaguswedding.vercel.app/assets/images/g21.jpg"
         />
       </Head>
