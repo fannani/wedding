@@ -168,29 +168,6 @@ export default function Home({ person }) {
 
   return (
     <>
-      <Head>
-        <title>Undangan Pernikahan Salwa & Bagus</title>
-        <meta
-          name="description"
-          content={dayjs(person.session.date).format('dddd, D MMMM YYYY')}
-        />
-
-        <meta property="og:title" content="Undangan Pernikahan Salwa & Bagus" />
-        <meta
-          property="og:description"
-          content={dayjs(person.session.date).format('dddd, D MMMM YYYY')}
-        />
-        <meta
-          property="og:url"
-          content={`https://salwabaguswedding.vercel.app/${person.id}`}
-        />
-        <meta property="og:type" content="website" />
-        <meta
-          property="og:image:secure_url"
-          itemProp="image"
-          content="https://salwabaguswedding.vercel.app/assets/images/g21.jpg"
-        />
-      </Head>
       <MotionBox
         position="fixed"
         top="0"
