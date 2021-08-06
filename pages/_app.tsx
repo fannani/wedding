@@ -28,7 +28,7 @@ const App = ({ Component, pageProps }) => {
           />
           <meta property="og:type" content="website" />
           <meta
-            property="og:image:secure_url"
+            property="og:image"
             itemProp="image"
             content="https://salwabaguswedding.vercel.app/assets/images/thumb.jpg"
           />
