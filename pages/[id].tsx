@@ -169,6 +169,12 @@ export default function Home({ person }) {
   return (
     <>
       <Head>
+        <title>Undangan Pernikahan Salwa & Bagus</title>
+        <meta
+          name="description"
+          content={dayjs(person.session.date).format('dddd, D MMMM YYYY')}
+        />
+
         <meta property="og:title" content="Undangan Pernikahan Salwa & Bagus" />
         <meta
           property="og:description"
