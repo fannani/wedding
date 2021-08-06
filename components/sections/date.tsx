@@ -269,32 +269,33 @@ url(/assets/images/top-right-side.png) no-repeat top right
                   color="rgb(188, 153, 83)"
                 />
               </MotionBox>
-              <MotionBox
-                position="absolute"
-                top="85%"
-                animate={controls}
-                initial={
-                  personQuery.data.data.precenceStatus
-                    ? 'afterSubmit'
-                    : 'beforeSubmit'
-                }
-                variants={{
-                  afterSubmit: {
-                    opacity: 1,
-                  },
-                  beforeSubmit: {
-                    opacity: 0,
-                  },
-                }}
-                // @ts-ignore
-                transition={{
-                  duration: 1,
-                }}
-              >
-                <Text fontSize="sm" textAlign="center" color="rgb(94, 63, 41)">
+              <Box position="absolute" top="85%">
+                <MotionText
+                  animate={controls}
+                  initial={
+                    personQuery.data.data.precenceStatus
+                      ? 'afterSubmit'
+                      : 'beforeSubmit'
+                  }
+                  variants={{
+                    afterSubmit: {
+                      opacity: 1,
+                    },
+                    beforeSubmit: {
+                      opacity: 0,
+                    },
+                  }}
+                  // @ts-ignore
+                  transition={{
+                    duration: 1,
+                  }}
+                  fontSize="sm"
+                  textAlign="center"
+                  color="rgb(94, 63, 41)"
+                >
                   {status && messages[status]}
-                </Text>
-              </MotionBox>
+                </MotionText>
+              </Box>
             </Flex>
             <MotionFlex
               direction="column"
