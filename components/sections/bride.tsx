@@ -261,8 +261,8 @@ const BrideSection = React.forwardRef((props, ref) => {
             mt="2"
             px="2"
           >
-            Tanpa Mengurangi Rasa Hormat, Kami Mengundang Anda Untuk Berhadir Di
-            Acara Pernikahan Kami.
+            Tanpa Mengurangi Rasa Hormat, Kami Mengundang Anda Untuk Hadir Di
+            Acara Resepsi Pernikahan Kami.
           </MotionText>
         </Flex>
         <Flex direction="column">
@@ -297,7 +297,7 @@ const BrideSection = React.forwardRef((props, ref) => {
             alignItems="center"
           >
             <PersonItem
-              name="Salwa 'Aisy"
+              name="Salwatul 'Aisy"
               desc="Putri"
               animationControl={control}
               image={salwa}

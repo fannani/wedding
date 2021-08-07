@@ -60,7 +60,7 @@ url(/assets/images/bottom-right-side.png) no-repeat bottom right
               Gunakan Masker
             </Text>
           </Flex>
-          <Flex direction="column" alignItems="center" width="111px" mx="1">
+          {/* <Flex direction="column" alignItems="center" width="111px" mx="1">
             <Box position="relative" width="70px" height="70px">
               <Image
                 src={p063}
@@ -72,7 +72,7 @@ url(/assets/images/bottom-right-side.png) no-repeat bottom right
             <Text fontWeight="bold" textAlign="center" fontSize="xs" mt="2">
               Gunakan Sabun
             </Text>
-          </Flex>
+          </Flex>*/}
         </Flex>
         <Flex justifyContent="center" mt="7" wrap="wrap">
           <Flex direction="column" alignItems="center" width="111px" mx="1">
