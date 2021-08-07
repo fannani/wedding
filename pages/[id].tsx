@@ -83,17 +83,10 @@ const MenuItem = ({ icon, title, animate, onClick }) => {
   );
 };
 
-export default function Home({ person }) {
-  const router = useRouter();
-  const boxRef = useRef();
-  const { scrollY } = useElementScroll(boxRef);
+const Invitation = ({ person }) => {
   const controls = useAnimation();
-  const personQuery = useQuery(
-    'person',
-    () => axios.get('/api/person', { params: { id: person.id } }),
-    {
-      enabled: !router.isFallback,
-    },
+  const personQuery = useQuery('person', () =>
+    axios.get('/api/person', { params: { id: person.id } }),
   );
   const brideControl = useSectionAnimation();
   const eventControl = useSectionAnimation();
@@ -103,6 +96,8 @@ export default function Home({ person }) {
   const [isMusicPlay, setIsMusicPlay] = React.useState(false);
   const [audio, setAudio] = React.useState();
   const [isShowContent, setIsShowContent] = React.useState(false);
+  const boxRef = useRef();
+  const { scrollY } = useElementScroll(boxRef);
   useEffect(() => {
     scrollY.onChange((v) => {
       if (v >= 200) {
@@ -143,20 +138,6 @@ export default function Home({ person }) {
       song.removeEventListener('ended', () => setIsMusicPlay(false));
     };
   }, []);
-
-  if (router.isFallback) {
-    return (
-      <Flex height="100vh" justifyContent="center" alignItems="center">
-        <Spinner
-          size="xl"
-          emptyColor="gray.200"
-          color="blue.500"
-          speed="0.65s"
-          thickness="4px"
-        />
-      </Flex>
-    );
-  }
 
   const onToggleMusic = () => {
     if (isMusicPlay) {
@@ -324,7 +305,26 @@ export default function Home({ person }) {
       </Box>
     </>
   );
-}
+};
+
+const Page = ({ person }) => {
+  const router = useRouter();
+  if (router.isFallback) {
+    return (
+      <Flex height="100vh" justifyContent="center" alignItems="center">
+        <Spinner
+          size="xl"
+          emptyColor="gray.200"
+          color="blue.500"
+          speed="0.65s"
+          thickness="4px"
+        />
+      </Flex>
+    );
+  }
+  return Invitation({ person });
+};
+export default Page;
 
 export async function getStaticPaths() {
   const persons = await prisma.person.findMany();
