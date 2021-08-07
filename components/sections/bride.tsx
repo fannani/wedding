@@ -293,7 +293,7 @@ const BrideSection = React.forwardRef((props, ref) => {
             flex="1"
             w="100%"
             maxW="700px"
-            direction={['column', 'row']}
+            direction="column"
             alignItems="center"
           >
             <PersonItem
