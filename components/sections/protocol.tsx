@@ -1,6 +1,7 @@
 import React from 'react';
-import { Flex, Box, Text } from '@chakra-ui/react';
+import { Flex, Box, Text, Icon, Link } from '@chakra-ui/react';
 import Image from 'next/image';
+import { AiFillInstagram, AiOutlineInstagram } from 'react-icons/ai';
 
 import p0114 from 'public/assets/images/protocol/01-14.png';
 import p0415 from 'public/assets/images/protocol/04-15.png';
@@ -16,6 +17,7 @@ const ProtocolSection = () => {
       direction="column"
       // borderRadius="25px"
       height="100vh"
+      minHeight="740px"
       w="100%"
       bg="url(/assets/images/bottom-left-side.png) no-repeat bottom left,
 url(/assets/images/bottom-right-side.png) no-repeat bottom right
@@ -114,6 +116,20 @@ url(/assets/images/bottom-right-side.png) no-repeat bottom right
               Gunakan Handsanitizer
             </Text>
           </Flex>
+        </Flex>
+        <Flex direction="column" alignItems="center" mt="20">
+          <Flex>
+            <Text fontSize="lg">Powered By</Text>
+            <Text fontWeight="bold" fontSize="lg" ml="1">
+              Vanilabs
+            </Text>
+          </Flex>
+          <Link href="https://www.instagram.com/vanilabs_">
+            <Flex mt="1">
+              <Icon boxSize="6" as={AiOutlineInstagram} />
+              <Text ml="2">vanilabs_</Text>
+            </Flex>
+          </Link>
         </Flex>
       </Flex>
     </Flex>

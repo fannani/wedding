@@ -3,9 +3,11 @@ import { Flex, Text, Box, FlexProps } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
 
 const photos = [
-  '/assets/images/g21.jpg',
-  '/assets/images/g22.jpg',
-  '/assets/images/g23.jpg',
+  '/assets/images/new/s1.jpeg',
+  '/assets/images/new/s2.jpeg',
+  '/assets/images/new/s3.jpeg',
+  '/assets/images/new/s4.jpeg',
+  '/assets/images/new/s5.jpeg',
 ];
 export const MotionFlex = motion<FlexProps>(Flex);
 

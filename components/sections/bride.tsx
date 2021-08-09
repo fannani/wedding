@@ -4,8 +4,8 @@ import Image from 'next/image';
 import { useAnimation, motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import decor from 'public/assets/images/decor.png';
-import salwa from 'public/assets/images/salwa.jpg';
-import bagus from 'public/assets/images/bagus.jpg';
+import salwa from 'public/assets/images/new/salwa.jpeg';
+import bagus from 'public/assets/images/new/bagus.jpeg';
 import ornament from 'public/assets/images/ornament.png';
 const MotionBox = motion<BoxProps>(Box);
 const MotionText = motion<TextProps>(Text);
@@ -55,6 +55,7 @@ const PersonItem = ({
             layout="fill"
             quality="50"
             sizes="30vw"
+            objectPosition="top"
             objectFit="cover"
           />
         </Box>
@@ -70,6 +71,7 @@ const PersonItem = ({
             layout="fill"
             sizes="30vw"
             quality="50"
+            objectPosition="top"
             objectFit="cover"
           />
         </Box>
