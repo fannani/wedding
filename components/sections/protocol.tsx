@@ -117,7 +117,7 @@ url(/assets/images/bottom-right-side.png) no-repeat bottom right
             </Text>
           </Flex>
         </Flex>
-        <Flex direction="column" alignItems="center" mt="20">
+        <Flex direction="column" alignItems="center" mt="24">
           <Flex>
             <Text fontSize="lg">Powered By</Text>
             <Text fontWeight="bold" fontSize="lg" ml="1">

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Flex, Text, Box, FlexProps } from '@chakra-ui/react';
+import { Flex, Text, Box, FlexProps, AspectRatio } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
 
 const photos = [
@@ -42,30 +42,32 @@ const GallerySection = React.forwardRef<any>((props, ref) => {
       <Text fontFamily="Signatura" fontSize="36">
         Galeri
       </Text>
-      <Box
-        mt="3"
-        height="100%"
-        rounded="lg"
-        w="100%"
-        boxShadow="xl"
-        overflow="hidden"
-        position="relative"
-      >
-        {photos.map((item, index) => (
-          <MotionFlex
-            key={index}
-            bg={`url(${item})`}
-            w="100%"
-            h="100%"
-            position="absolute"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: activeIndex === index ? 1 : 0 }}
-            bgRepeat="no-repeat"
-            bgSize="cover"
-            bgPosition="center"
-          ></MotionFlex>
-        ))}
-      </Box>
+      <AspectRatio w="100%" ratio={0.64}>
+        <Box
+          mt="3"
+          height="100%"
+          rounded="lg"
+          w="100%"
+          boxShadow="xl"
+          overflow="hidden"
+          position="relative"
+        >
+          {photos.map((item, index) => (
+            <MotionFlex
+              key={index}
+              bg={`url(${item})`}
+              w="100%"
+              h="100%"
+              position="absolute"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: activeIndex === index ? 1 : 0 }}
+              bgRepeat="no-repeat"
+              bgSize="cover"
+              bgPosition="center"
+            ></MotionFlex>
+          ))}
+        </Box>
+      </AspectRatio>
     </Flex>
   );
 });

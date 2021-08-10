@@ -79,11 +79,11 @@ const EventSection = React.forwardRef<HTMLDivElement, EventSectionProps>(
               variants={{
                 visible: {
                   opacity: 1,
-                  y: 0,
+                  x: 0,
                 },
                 hidden: {
                   opacity: 0,
-                  y: -10,
+                  x: -50,
                 },
               }}
               // @ts-ignore
@@ -179,11 +179,11 @@ const EventSection = React.forwardRef<HTMLDivElement, EventSectionProps>(
               variants={{
                 visible: {
                   opacity: 1,
-                  y: 0,
+                  x: 0,
                 },
                 hidden: {
                   opacity: 0,
-                  y: -10,
+                  x: -50,
                 },
               }}
               // @ts-ignore
