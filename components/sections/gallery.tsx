@@ -31,12 +31,10 @@ const GallerySection = React.forwardRef<any>((props, ref) => {
       direction="column"
       // borderRadius="25px"
       ref={ref}
-      height="100vh"
       w="100%"
       bgSize={['160px', '260px']}
       bgColor="#EFE8E4"
       alignItems="center"
-      pb="20"
       px="5"
     >
       <Text fontFamily="Signatura" fontSize="36">
