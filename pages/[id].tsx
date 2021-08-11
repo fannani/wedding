@@ -157,8 +157,8 @@ const Invitation = ({ person }) => {
         backgroundColor="white"
         padding="2"
         py="1"
-        mt="45%"
-        mr="3"
+        mt={['45%', '45%', '45%', '20%']}
+        mr={[3, 3, 3, 10]}
         initial="hidden"
         animate={controls}
         right="0"
