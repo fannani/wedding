@@ -1,5 +1,12 @@
 import React from 'react';
-import { Flex, Text, Box, FlexProps, AspectRatio } from '@chakra-ui/react';
+import {
+  Flex,
+  Text,
+  Box,
+  FlexProps,
+  AspectRatio,
+  chakra,
+} from '@chakra-ui/react';
 import { motion } from 'framer-motion';
 
 const photos = [
@@ -66,6 +73,19 @@ const GallerySection = React.forwardRef<any>((props, ref) => {
           ))}
         </Box>
       </AspectRatio>
+      <Flex direction="column">
+        <Text mt="20" color="rgb(94, 63, 41)" textAlign="center" fontSize="20">
+          <chakra.span>{`" `}</chakra.span>
+          <chakra.span fontWeight="bold">Happy</chakra.span> is the man who
+          finds a <chakra.span fontWeight="bold">true friend</chakra.span>, and
+          far <chakra.span fontWeight="bold">happier</chakra.span> is he who
+          finds that true friend in
+          <chakra.span fontWeight="bold">his wife</chakra.span>.{` "`}
+        </Text>
+        <Text color="rgb(94, 63, 41)" textAlign="center" mt="5">
+          -Franz Schubert-
+        </Text>
+      </Flex>
     </Flex>
   );
 });

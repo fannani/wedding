@@ -83,7 +83,7 @@ const ProtocolSection = () => {
               />
             </Box>
             <Text fontWeight="bold" textAlign="center" fontSize="xs" mt="2">
-              Tidak Berjabat Tangan
+              Hindari Berjabat Tangan
             </Text>
           </Flex>
           <Flex direction="column" alignItems="center" width="111px" mx="1">
@@ -114,7 +114,7 @@ const ProtocolSection = () => {
           </Flex>
         </Flex>
         <Flex
-          mx="10"
+          mx="5"
           mt="20"
           mb="20"
           p="10"
@@ -139,7 +139,7 @@ const ProtocolSection = () => {
             fontSize="18"
             borderRadius="sm"
           >
-            <Text>#salwabagus</Text>
+            <Text>#salwabaguswedding</Text>
           </Box>
         </Flex>
       </Flex>

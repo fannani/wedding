@@ -32,23 +32,11 @@ const ClosingSection = () => {
             <Flex direction="column">
               <Text
                 fontFamily="Stalemate"
-                fontSize="28"
+                fontSize="30"
                 textAlign="center"
                 color="white"
               >
                 Sampai Jumpa Di Hari Bahagia Kami
-              </Text>
-              <Text mt="20" color="white" textAlign="center" fontSize="20">
-                <chakra.span>{`" `}</chakra.span>
-                <chakra.span fontWeight="bold">Happy</chakra.span> is the man
-                who finds a{' '}
-                <chakra.span fontWeight="bold">true friend</chakra.span>, and
-                far <chakra.span fontWeight="bold">happier</chakra.span> is he
-                who finds that true friend in
-                <chakra.span fontWeight="bold">his wife</chakra.span>.{` "`}
-              </Text>
-              <Text color="white" textAlign="center" mt="5">
-                -Franz Schubert-
               </Text>
             </Flex>
 

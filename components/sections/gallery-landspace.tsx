@@ -23,13 +23,12 @@ const GalleryLandspaceSection = React.forwardRef<any>((props, ref) => {
       maxW="1200px"
       direction="column"
       // borderRadius="25px"
-      height="100vh"
       ref={ref}
       w="100%"
       bgSize={['160px', '260px']}
       bgColor="#EFE8E4"
       alignItems="center"
-      minH="860px"
+      minH="800px"
       pt="5"
       px="5"
     >

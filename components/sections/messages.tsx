@@ -1,6 +1,7 @@
 import React from 'react';
-import { Flex, Box, Image, Text, Avatar, Spinner } from '@chakra-ui/react';
+import { Flex, Box, Text, Avatar, Spinner } from '@chakra-ui/react';
 import { useQuery } from 'react-query';
+import Image from 'next/image';
 
 import ornament from 'public/assets/images/ornament.png';
 
@@ -21,7 +22,6 @@ const MessagesSection = () => {
       bgColor="#EFE8E4"
       alignItems="center"
       pb="20"
-      pt="5"
       px="5"
     >
       <Box
@@ -35,16 +35,11 @@ const MessagesSection = () => {
           bottom="0"
           position="absolute"
         >
-          <Image
-            src="/assets/images/ornament.png"
-            alt="Salwa"
-            layout="fill"
-            objectFit="cover"
-          />
+          <Image src={ornament} alt="Salwa" layout="fill" objectFit="cover" />
         </Box>
       </Box>
       <Text fontFamily="Signatura" fontSize="32">
-        Ucapan & Komentar
+        Ucapan & Doa Restu
       </Text>
       <Flex
         mt="3"

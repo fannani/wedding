@@ -49,16 +49,18 @@ const DateSection = React.forwardRef<HTMLDivElement, DateSectionProps>(
     const controls = useAnimation();
     const [refAnimation, inView] = useInView({ threshold: 0.15 });
     const animationControl = useAnimation();
-    const [status, setStatus] = React.useState<any>();
+    const [status, setStatus] = React.useState<any>(null);
     const [eventDuration, setEventDuration] = React.useState<Duration>(
       dayjs.duration(1),
     );
 
     React.useEffect(() => {
       if (!personQuery.isLoading) {
-        setStatus(personQuery.data.data.precenceStatus);
+        if (personQuery.data.data.precenceStatus) {
+          setStatus(personQuery.data.data.precenceStatus);
+        }
       }
-    }, [personQuery]);
+    }, [personQuery.isLoading]);
     React.useEffect(() => {
       const timer = setInterval(() => {
         const now = dayjs();
@@ -75,13 +77,15 @@ const DateSection = React.forwardRef<HTMLDivElement, DateSectionProps>(
       if (inView) animationControl.start('visible');
     }, [inView]);
 
-    const onAttendClick = (status) => {
-      setStatus(status);
-      axios.post('/api/attendance', {
-        id: person.id,
-        status,
-      });
-      controls.start('afterSubmit');
+    const onAttendClick = (param) => {
+      if (status === null) {
+        setStatus(param);
+        axios.post('/api/attendance', {
+          id: person.id,
+          param,
+        });
+        controls.start('afterSubmit');
+      }
     };
     return (
       <Flex
@@ -102,14 +106,35 @@ url(/assets/images/top-right-side.png) no-repeat top right
         alignItems="center"
         bgColor="#EFE8E4"
       >
+        <Flex direction="column" px="10" mt="5">
+          <Text
+            fontWeight="bold"
+            fontSize="34"
+            color="rgb(94, 63, 41)"
+            fontFamily="signatura"
+            textAlign="center"
+          >
+            Menuju Hari Bahagia
+          </Text>
+          <Text color="rgb(94, 63, 41)" mt="5" textAlign="center">
+            siang dan malam berlalu begitu cepat diantara saat-saat mendebarkan
+            yang belum pernah kami rasakan sebelumnnya
+          </Text>
+          <Text mt="3" color="rgb(94, 63, 41)" textAlign="center">
+            Kami menantikan kehadiran para keluarga dan sahabat untuk menjadi
+            saksi ikrar janji suci kami di hari bahagia
+          </Text>
+        </Flex>
         <MotionText
           ref={refAnimation}
           fontFamily="Signatura"
           fontSize="34"
           animate={animationControl}
-          mt="5"
+          color="rgb(94, 63, 41)"
+          mt="10"
           // @ts-ignore
           transition={{ duration: 1 }}
+          fontWeight="bold"
           initial="hidden"
           variants={{
             visible: {
@@ -227,24 +252,7 @@ url(/assets/images/top-right-side.png) no-repeat top right
               </Text>
             </Flex>
           </MotionFlex>
-          <Flex direction="column" px="10" mt="10">
-            <Text
-              fontWeight="bold"
-              color="rgb(94, 63, 41)"
-              fontSize="20"
-              textAlign="right"
-            >
-              Menuju Hari Bahagia
-            </Text>
-            <Text color="rgb(94, 63, 41)" mt="5" textAlign="right">
-              siang dan malam berlalu begitu cepat diantara saat-saat
-              mendebarkan yang belum pernah kami rasakan sebelumnnya
-            </Text>
-            <Text mt="3" color="rgb(94, 63, 41)" textAlign="right">
-              Kami menantikan kehadiran para keluarga dan sahabat untuk menjadi
-              saksi ikrar janji suci kami di hari bahagia
-            </Text>
-          </Flex>
+
           <Flex justifyContent="center" mt="10">
             <Box
               width={['100px', '200px']}
@@ -373,7 +381,8 @@ url(/assets/images/top-right-side.png) no-repeat top right
                     opacity: 1,
                   },
                 }}
-                fontSize="14"
+                fontSize="16"
+                color="rgb(94, 63, 41)"
               >
                 Apakah anda akan datang ?
               </MotionText>
@@ -388,7 +397,7 @@ url(/assets/images/top-right-side.png) no-repeat top right
                   },
                 }}
                 direction="column"
-                mt="2"
+                mt="5"
               >
                 <Button
                   colorScheme="primary"
