@@ -17,6 +17,7 @@ const PersonItem = ({
   father,
   mother,
   animationControl,
+  objectPosition = 'top',
 }) => {
   return (
     <Flex direction="column" justifyContent="center" alignItems="center">
@@ -56,7 +57,7 @@ const PersonItem = ({
             layout="fill"
             quality="50"
             sizes="30vw"
-            objectPosition="top"
+            objectPosition={objectPosition}
             objectFit="cover"
           />
         </Box>
@@ -314,6 +315,7 @@ const BrideSection = React.forwardRef((props, ref) => {
               desc="Putra"
               animationControl={control}
               image={bagus}
+              objectPosition="center -12px"
               father="H. Ainur Rofiq Nansur (Alm)"
               mother="Hj. Mariyah"
             />
