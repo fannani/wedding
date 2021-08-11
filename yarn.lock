@@ -743,10 +743,20 @@
     minimatch "^3.0.4"
     strip-json-comments "^3.1.1"
 
+"@fontsource/montecarlo@^4.5.1":
+  version "4.5.1"
+  resolved "https://registry.yarnpkg.com/@fontsource/montecarlo/-/montecarlo-4.5.1.tgz#f02b7ec4d3e463b48e5e42099690cd1298177872"
+  integrity sha512-H25k5symNPkoRWaw7lQxb7c2ug8zA7e1WsUUrHrGiagjyXn+Ia7flyms+H+YAe3ops1aVqB+xXTLz3rptHiE4g==
+
 "@fontsource/montserrat@^4.5.0":
   version "4.5.0"
   resolved "https://registry.yarnpkg.com/@fontsource/montserrat/-/montserrat-4.5.0.tgz#8390d428c5eb440e78e33e13ff667ea4e0e27fb4"
   integrity sha512-gbGuqmEf/hfwfzJzoeSMmCr+WKFmzs+fv1pm0aTM6iiMWhXJSmwfKzfWZL4c5a+PlCD/poySzXxu5yz0yjJ82A==
+
+"@fontsource/stalemate@^4.5.0":
+  version "4.5.0"
+  resolved "https://registry.yarnpkg.com/@fontsource/stalemate/-/stalemate-4.5.0.tgz#315877c331c9f8b8e464cbe7f2a28d5feb3ce38b"
+  integrity sha512-tWywngravT8RpfsxUlaGReXMSlmKlnaSv5wZtm21iAXDySS04uztNJz9AQdCLyCZjfDIkMgQ+857QcqQttq3Aw==
 
 "@hapi/accept@5.0.2":
   version "5.0.2"

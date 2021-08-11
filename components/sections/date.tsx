@@ -10,6 +10,9 @@ import {
   BoxProps,
   Spinner,
 } from '@chakra-ui/react';
+import Image from 'next/image';
+
+import ornament from 'public/assets/images/ornament.png';
 import { FaCheck } from 'react-icons/fa';
 import { motion, useAnimation } from 'framer-motion';
 import axios from 'axios';
@@ -87,6 +90,7 @@ const DateSection = React.forwardRef<HTMLDivElement, DateSectionProps>(
         maxW="1200px"
         direction="column"
         height="100vh"
+        minH="1100px"
         justifyContent="space-between"
         w="100%"
         bg="url(/assets/images/top-left-side.png) no-repeat top left,
@@ -223,6 +227,45 @@ url(/assets/images/top-right-side.png) no-repeat top right
               </Text>
             </Flex>
           </MotionFlex>
+          <Flex direction="column" px="10" mt="10">
+            <Text
+              fontWeight="bold"
+              color="rgb(94, 63, 41)"
+              fontSize="20"
+              textAlign="right"
+            >
+              Menuju Hari Bahagia
+            </Text>
+            <Text color="rgb(94, 63, 41)" mt="5" textAlign="right">
+              siang dan malam berlalu begitu cepat diantara saat-saat
+              mendebarkan yang belum pernah kami rasakan sebelumnnya
+            </Text>
+            <Text mt="3" color="rgb(94, 63, 41)" textAlign="right">
+              Kami menantikan kehadiran para keluarga dan sahabat untuk menjadi
+              saksi ikrar janji suci kami di hari bahagia
+            </Text>
+          </Flex>
+          <Flex justifyContent="center" mt="10">
+            <Box
+              width={['100px', '200px']}
+              height={['50px', '200px']}
+              position="relative"
+            >
+              <Box
+                width={['100px', '200px']}
+                height={['100px', '200px']}
+                bottom="0"
+                position="absolute"
+              >
+                <Image
+                  src={ornament}
+                  alt="Salwa"
+                  layout="fill"
+                  objectFit="cover"
+                />
+              </Box>
+            </Box>
+          </Flex>
         </Flex>
         {personQuery.isLoading ? (
           <Flex height="100%" justifyContent="center" alignItems="center">
@@ -297,8 +340,10 @@ url(/assets/images/top-right-side.png) no-repeat top right
                 </MotionText>
               </Box>
             </Flex>
+
             <MotionFlex
               direction="column"
+              mt="14"
               alignItems="center" // @ts-ignore
               transition={{ duration: 1, delay: 1.5 }}
               initial="hidden"

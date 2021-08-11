@@ -1,6 +1,9 @@
 import React from 'react';
 import { Flex, Box, Image, Text, Avatar, Spinner } from '@chakra-ui/react';
 import { useQuery } from 'react-query';
+
+import ornament from 'public/assets/images/ornament.png';
+
 import axios from 'axios';
 const MessagesSection = () => {
   const { data, isLoading } = useQuery('messages', () =>

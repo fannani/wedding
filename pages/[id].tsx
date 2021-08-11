@@ -34,6 +34,7 @@ import { useQuery } from 'react-query';
 import axios from 'axios';
 import dayjs from 'dayjs';
 import 'dayjs/locale/id';
+import ClosingSection from '@/sections/closing';
 
 dayjs.locale('id');
 export const MotionBox = motion<BoxProps>(Box);
@@ -299,6 +300,7 @@ const Invitation = ({ person }) => {
               <MessagesSection />
               <FormSection person={person} personQuery={personQuery} />
               <ProtocolSection />
+              <ClosingSection />
             </Flex>
           </Flex>
         </Flex>

@@ -1,6 +1,7 @@
 import React from 'react';
 import { ChakraProvider } from '@chakra-ui/react';
 import '@fontsource/montserrat';
+import '@fontsource/stalemate';
 import { Global } from '@emotion/react';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import theme from '../theme';

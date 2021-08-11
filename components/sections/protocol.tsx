@@ -16,12 +16,8 @@ const ProtocolSection = () => {
       maxW="1200px"
       direction="column"
       // borderRadius="25px"
-      height="100vh"
-      minHeight="740px"
+      minHeight="600px"
       w="100%"
-      bg="url(/assets/images/bottom-left-side.png) no-repeat bottom left,
-url(/assets/images/bottom-right-side.png) no-repeat bottom right
-"
       bgSize={['160px', '260px']}
       bgColor="#EFE8E4"
       alignItems="center"
@@ -117,19 +113,34 @@ url(/assets/images/bottom-right-side.png) no-repeat bottom right
             </Text>
           </Flex>
         </Flex>
-        <Flex direction="column" alignItems="center" mt="24">
-          <Flex>
-            <Text fontSize="lg">Powered By</Text>
-            <Text fontWeight="bold" fontSize="lg" ml="1">
-              Vanilabs
-            </Text>
-          </Flex>
-          <Link href="https://www.instagram.com/vanilabs_">
-            <Flex mt="1">
-              <Icon boxSize="6" as={AiOutlineInstagram} />
-              <Text ml="2">vanilabs_</Text>
-            </Flex>
-          </Link>
+        <Flex
+          mx="10"
+          mt="20"
+          mb="20"
+          p="10"
+          direction="column"
+          bgColor="primary.600"
+          borderRadius="xl"
+          color="white"
+          alignItems="center"
+        >
+          <Text fontWeight="bold" fontSize="34" fontFamily="signatura">
+            Life Moment
+          </Text>
+          <Text mt="4" textAlign="center">
+            Bantu kami mengabadikan momen-momen bahagia di acara pernikahan kami
+            dengan menandai postingan anda dengan hashtag berikut:
+          </Text>
+          <Box
+            mt="10"
+            bgColor="primary.700"
+            px="5"
+            py="2"
+            fontSize="18"
+            borderRadius="sm"
+          >
+            <Text>#salwabagus</Text>
+          </Box>
         </Flex>
       </Flex>
     </Flex>
