@@ -52,6 +52,7 @@ const PersonItem = ({
           <Image
             src={image}
             alt="Salwa"
+            loading="eager"
             layout="fill"
             quality="50"
             sizes="30vw"
@@ -69,6 +70,7 @@ const PersonItem = ({
             src={decor}
             alt="Salwa"
             layout="fill"
+            loading="eager"
             sizes="30vw"
             quality="50"
             objectPosition="top"

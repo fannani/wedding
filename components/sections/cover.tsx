@@ -98,7 +98,7 @@ url(/assets/images/top-right-side.png) no-repeat top right"
             mt={5}
             color="rgb(94, 63, 41)"
             // @ts-ignore
-            transition={{ delay: 2, duration: 1 }}
+            transition={{ delay: 3, duration: 1.5 }}
           >
             {dayjs(person.session.date).format('dddd, D MMMM YYYY')}
           </MotionText>
@@ -109,7 +109,7 @@ url(/assets/images/top-right-side.png) no-repeat top right"
           initial={{ y: -20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           // @ts-ignore
-          transition={{ delay: 2, duration: 1 }}
+          transition={{ delay: 4, duration: 1.5 }}
         >
           <Text color="rgb(94, 63, 41)">Kepada</Text>
           <Text fontWeight="bold" color="rgb(94, 63, 41)" fontSize="20">
@@ -120,7 +120,7 @@ url(/assets/images/top-right-side.png) no-repeat top right"
         <MotionBox
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }} // @ts-ignore
-          transition={{ delay: 3, duration: 1 }}
+          transition={{ delay: 6, duration: 1.5 }}
         >
           <MotionButton
             borderRadius="full"
