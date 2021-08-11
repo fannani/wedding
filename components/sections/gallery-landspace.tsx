@@ -9,9 +9,7 @@ const photos = [
   '/assets/images/g1.jpeg',
   '/assets/images/g2.jpeg',
   '/assets/images/g3.jpeg',
-  '/assets/images/g6.jpeg',
   '/assets/images/g7.jpeg',
-  '/assets/images/g8.jpeg',
 ];
 export const MotionFlex = motion<FlexProps>(Flex);
 

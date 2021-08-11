@@ -121,8 +121,8 @@ url(/assets/images/top-right-side.png) no-repeat top right
             yang belum pernah kami rasakan sebelumnnya
           </Text>
           <Text mt="3" color="rgb(94, 63, 41)" textAlign="center">
-            Kami menantikan kehadiran para keluarga dan sahabat untuk menjadi
-            saksi ikrar janji suci kami di hari bahagia
+            kami menantikan kehadiran para keluarga dan sahabat untuk menjadi
+            saksi bahagia kami
           </Text>
         </Flex>
         <MotionText

@@ -71,7 +71,7 @@ const FormSection = ({ person, personQuery }) => {
         </Box>
       </Box>
       <Text fontFamily="Signatura" fontSize="32">
-        Kirim Ucapan & Komentar
+        Kirim Ucapan & Doa Restu
       </Text>
       {personQuery.isLoading ? (
         <Flex height="100%" justifyContent="center" alignItems="center">

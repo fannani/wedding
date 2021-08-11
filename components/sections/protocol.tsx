@@ -24,10 +24,10 @@ const ProtocolSection = () => {
       pb="10"
     >
       <Flex direction="column">
-        <Text fontWeight="bold" fontSize="lg" mx="12">
+        <Text fontWeight="bold" fontSize="lg" mx="5" textAlign="center">
           Protokol Kesehatan (Covid-19)
         </Text>
-        <Text mt="7" mx="12">
+        <Text mt="7" mx="5" textAlign="center">
           demi mendukung kesehatan bersama alangkah baiknya para tamu yang akan
           hadir memenuhi protokol kesehatan sebagai berikut:
         </Text>
@@ -117,7 +117,8 @@ const ProtocolSection = () => {
           mx="5"
           mt="20"
           mb="20"
-          p="10"
+          px="5"
+          py="10"
           direction="column"
           bgColor="primary.600"
           borderRadius="xl"
@@ -127,7 +128,7 @@ const ProtocolSection = () => {
           <Text fontWeight="bold" fontSize="34" fontFamily="signatura">
             Life Moment
           </Text>
-          <Text mt="4" textAlign="center">
+          <Text mt="4" textAlign="center" fontSize="15">
             Bantu kami mengabadikan momen-momen bahagia di acara pernikahan kami
             dengan menandai postingan anda dengan hashtag berikut:
           </Text>
@@ -139,7 +140,7 @@ const ProtocolSection = () => {
             fontSize="18"
             borderRadius="sm"
           >
-            <Text>#salwabaguswedding</Text>
+            <Text fontSize="15">#salwabaguswedding</Text>
           </Box>
         </Flex>
       </Flex>

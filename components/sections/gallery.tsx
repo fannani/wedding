@@ -12,14 +12,12 @@ import { motion } from 'framer-motion';
 const photos = [
   '/assets/images/g23.jpg',
   '/assets/images/g22.jpg',
-  '/assets/images/new/s1.jpeg',
   '/assets/images/new/s2.jpeg',
   '/assets/images/new/s3.jpeg',
   '/assets/images/new/s4.jpeg',
   '/assets/images/new/s5.jpeg',
   '/assets/images/new/s6.jpeg',
   '/assets/images/new/s8.jpeg',
-  '/assets/images/new/s7.jpeg',
 ];
 export const MotionFlex = motion<FlexProps>(Flex);
 
@@ -81,10 +79,11 @@ const GallerySection = React.forwardRef<any>((props, ref) => {
         <Text mt="20" color="rgb(94, 63, 41)" textAlign="center" fontSize="20">
           <chakra.span>{`" `}</chakra.span>
           <chakra.span fontWeight="bold">Happy</chakra.span> is the man who
-          finds a <chakra.span fontWeight="bold">true friend</chakra.span>, and
-          far <chakra.span fontWeight="bold">happier</chakra.span> is he who
-          finds that true friend in
-          <chakra.span fontWeight="bold">his wife</chakra.span>.{` "`}
+          <chakra.span> finds</chakra.span> a{' '}
+          <chakra.span fontWeight="bold">true friend</chakra.span>, and far{' '}
+          <chakra.span fontWeight="bold">happier</chakra.span> is he who finds
+          that true friend in
+          <chakra.span fontWeight="bold"> his wife</chakra.span>.{` "`}
         </Text>
         <Text color="rgb(94, 63, 41)" textAlign="center" mt="5">
           -Franz Schubert-

@@ -15,7 +15,7 @@ const ClosingSection = () => {
           overflow="hidden"
           minHeight="800px"
           w="100%"
-          bgImage="linear-gradient(to bottom, rgba(255, 255,255,0.52), rgba(21, 19, 19, 0.90)), url('/assets/images/new/s2.jpeg')"
+          bgImage="linear-gradient(to bottom, rgba(255, 255,255,0.52), rgba(21, 19, 19, 0.90)), url('/assets/images/new/s1.jpeg')"
           bgSize="cover"
           bgColor="#EFE8E4"
           alignItems="center"
