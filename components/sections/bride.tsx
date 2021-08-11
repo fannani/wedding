@@ -315,7 +315,7 @@ const BrideSection = React.forwardRef((props, ref) => {
               desc="Putra"
               animationControl={control}
               image={bagus}
-              objectPosition="center -12px"
+              objectPosition="center -14px"
               father="H. Ainur Rofiq Nansur (Alm)"
               mother="Hj. Mariyah"
             />
