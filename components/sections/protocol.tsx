@@ -1,7 +1,9 @@
 import React from 'react';
-import { Flex, Box, Text, Icon, Link } from '@chakra-ui/react';
+import { Flex, Box, Text, Icon, Link, FlexProps } from '@chakra-ui/react';
 import Image from 'next/image';
 import { AiFillInstagram, AiOutlineInstagram } from 'react-icons/ai';
+import { useAnimation, motion } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
 
 import p0114 from 'public/assets/images/protocol/01-14.png';
 import p0415 from 'public/assets/images/protocol/04-15.png';
@@ -9,8 +11,14 @@ import p063 from 'public/assets/images/protocol/06-3.png';
 import p0510 from 'public/assets/images/protocol/05-10.png';
 import p039 from 'public/assets/images/protocol/03-9.png';
 import p0215 from 'public/assets/images/protocol/02-15.png';
+export const MotionFlex = motion<FlexProps>(Flex);
 
 const ProtocolSection = () => {
+  const [refAnimation, inView] = useInView({ threshold: 0.2 });
+  const control = useAnimation();
+  React.useEffect(() => {
+    if (inView) control.start('visible');
+  }, [inView]);
   return (
     <Flex
       maxW="1200px"
@@ -113,12 +121,27 @@ const ProtocolSection = () => {
             </Text>
           </Flex>
         </Flex>
-        <Flex
+        <MotionFlex
+          ref={refAnimation}
           mx="5"
           mt="20"
           mb="20"
           px="5"
           py="10"
+          animate={control}
+          initial="hidden"
+          variants={{
+            visible: {
+              opacity: 1,
+              x: 0,
+            },
+            hidden: {
+              opacity: 0,
+              x: 50,
+            },
+          }}
+          // @ts-ignore
+          transition={{ duration: 1 }}
           direction="column"
           bgColor="primary.600"
           borderRadius="xl"
@@ -142,7 +165,7 @@ const ProtocolSection = () => {
           >
             <Text fontSize="15">#salwabaguswedding</Text>
           </Box>
-        </Flex>
+        </MotionFlex>
       </Flex>
     </Flex>
   );

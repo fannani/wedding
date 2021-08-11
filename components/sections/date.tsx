@@ -107,23 +107,73 @@ url(/assets/images/top-right-side.png) no-repeat top right
         bgColor="#EFE8E4"
       >
         <Flex direction="column" px="10" mt="5">
-          <Text
+          <MotionText
             fontWeight="bold"
             fontSize="34"
             color="rgb(94, 63, 41)"
             fontFamily="signatura"
+            animate={animationControl}
+            // @ts-ignore
+            transition={{ duration: 1 }}
             textAlign="center"
+            initial="hidden"
+            variants={{
+              visible: {
+                opacity: 1,
+                y: 0,
+              },
+              hidden: {
+                opacity: 0,
+                y: -10,
+              },
+            }}
           >
             Menuju Hari Bahagia
-          </Text>
-          <Text color="rgb(94, 63, 41)" mt="5" textAlign="center">
+          </MotionText>
+          <MotionText
+            color="rgb(94, 63, 41)"
+            mt="5"
+            textAlign="center"
+            initial="hidden"
+            // @ts-ignore
+            transition={{ duration: 1, delay: 0.5 }}
+            animate={animationControl}
+            variants={{
+              visible: {
+                opacity: 1,
+                y: 0,
+              },
+              hidden: {
+                opacity: 0,
+                y: -10,
+              },
+            }}
+          >
             siang dan malam berlalu begitu cepat diantara saat-saat mendebarkan
             yang belum pernah kami rasakan sebelumnnya
-          </Text>
-          <Text mt="3" color="rgb(94, 63, 41)" textAlign="center">
+          </MotionText>
+          <MotionText
+            mt="3"
+            color="rgb(94, 63, 41)"
+            textAlign="center"
+            initial="hidden"
+            // @ts-ignore
+            transition={{ duration: 1, delay: 1 }}
+            animate={animationControl}
+            variants={{
+              visible: {
+                opacity: 1,
+                y: 0,
+              },
+              hidden: {
+                opacity: 0,
+                y: -10,
+              },
+            }}
+          >
             kami menantikan kehadiran para keluarga dan sahabat untuk menjadi
             saksi bahagia kami
-          </Text>
+          </MotionText>
         </Flex>
         <MotionText
           ref={refAnimation}
@@ -133,7 +183,7 @@ url(/assets/images/top-right-side.png) no-repeat top right
           color="rgb(94, 63, 41)"
           mt="10"
           // @ts-ignore
-          transition={{ duration: 1 }}
+          transition={{ duration: 1, delay: 1.5 }}
           fontWeight="bold"
           initial="hidden"
           variants={{
@@ -154,7 +204,7 @@ url(/assets/images/top-right-side.png) no-repeat top right
             direction="column"
             initial="hidden"
             // @ts-ignore
-            transition={{ duration: 1, delay: 0.5 }}
+            transition={{ duration: 1, delay: 2 }}
             animate={animationControl}
             variants={{
               visible: {
@@ -190,7 +240,7 @@ url(/assets/images/top-right-side.png) no-repeat top right
           <MotionFlex
             justify="center"
             // @ts-ignore
-            transition={{ duration: 1, delay: 1 }}
+            transition={{ duration: 1, delay: 2.5 }}
             initial="hidden"
             animate={animationControl}
             variants={{
@@ -353,7 +403,7 @@ url(/assets/images/top-right-side.png) no-repeat top right
               direction="column"
               mt="14"
               alignItems="center" // @ts-ignore
-              transition={{ duration: 1, delay: 1.5 }}
+              transition={{ duration: 1, delay: 3 }}
               initial="hidden"
               animate={
                 personQuery.data.data.precenceStatus
