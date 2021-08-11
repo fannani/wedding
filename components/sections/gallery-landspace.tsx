@@ -18,7 +18,7 @@ export const MotionFlex = motion<FlexProps>(Flex);
 const GalleryLandspaceSection = React.forwardRef<any>((props, ref) => {
   const [activeIndex, setActiveIndex] = React.useState(0);
   const control = useAnimation();
-  const [refAnimation, inView] = useInView({ threshold: 0.3 });
+  const [refAnimation, inView] = useInView({ threshold: 0.25 });
 
   React.useEffect(() => {
     if (inView) control.start('visible');
