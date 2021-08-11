@@ -35,7 +35,7 @@ const EventSection = React.forwardRef<HTMLDivElement, EventSectionProps>(
     }, [inView]);
     return (
       <Box
-        maxW="700px"
+        maxW="650px"
         w="100%"
         height="100vh"
         minH="800px"

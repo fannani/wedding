@@ -91,10 +91,10 @@ const DateSection = React.forwardRef<HTMLDivElement, DateSectionProps>(
       <Flex
         // @ts-ignore
         ref={ref}
-        maxW="1200px"
+        maxW="650px"
         direction="column"
         height="100vh"
-        minH="1100px"
+        minH="1200px"
         justifyContent="space-between"
         w="100%"
         bg="url(/assets/images/top-left-side.png) no-repeat top left,

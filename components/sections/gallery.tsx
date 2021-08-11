@@ -36,7 +36,7 @@ const GallerySection = React.forwardRef<any>((props, ref) => {
   }, []);
   return (
     <Flex
-      maxW="1200px"
+      maxW="650px"
       direction="column"
       // borderRadius="25px"
       ref={ref}

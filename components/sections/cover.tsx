@@ -26,7 +26,7 @@ const MotionBox = motion<BoxProps>(Box);
 const CoverSection = ({ person, onOpen }) => {
   return (
     <Flex
-      maxW="1200px"
+      maxW="650px"
       direction="column"
       height="100vh"
       w="100%"

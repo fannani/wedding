@@ -175,11 +175,11 @@ const BrideSection = React.forwardRef((props, ref) => {
   }, [inView]);
   return (
     <Flex
-      maxW="1200px"
+      maxW="650px"
       direction="column"
       // borderRadius="25px"
       height="100vh"
-      minH="870px"
+      minH={['900px', '900px', '900px', '1200px']}
       w="100%"
       //   @ts-ignore
       ref={ref}

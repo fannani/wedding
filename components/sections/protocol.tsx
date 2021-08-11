@@ -21,7 +21,7 @@ const ProtocolSection = () => {
   }, [inView]);
   return (
     <Flex
-      maxW="1200px"
+      maxW="650px"
       direction="column"
       // borderRadius="25px"
       minHeight="600px"
