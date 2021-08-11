@@ -131,7 +131,6 @@ const FormSection = ({ person, personQuery }) => {
           >
             <form onSubmit={handleSubmit(onSubmit)}>
               <FormControl mt="5">
-                <FormLabel id="message">Pesan</FormLabel>
                 <Textarea
                   {...register('message', { required: true })}
                   bg="white"
