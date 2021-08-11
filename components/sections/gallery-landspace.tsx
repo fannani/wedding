@@ -4,9 +4,14 @@ import { useInView } from 'react-intersection-observer';
 import { useAnimation, motion } from 'framer-motion';
 
 const photos = [
+  '/assets/images/g4.jpeg',
+  '/assets/images/g5.jpeg',
   '/assets/images/g1.jpeg',
   '/assets/images/g2.jpeg',
   '/assets/images/g3.jpeg',
+  '/assets/images/g6.jpeg',
+  '/assets/images/g7.jpeg',
+  '/assets/images/g8.jpeg',
 ];
 export const MotionFlex = motion<FlexProps>(Flex);
 
