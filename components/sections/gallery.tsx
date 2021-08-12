@@ -37,7 +37,7 @@ const GallerySection = React.forwardRef<any>((props, ref) => {
           }
           return 0;
         });
-      }, 3000);
+      }, 2000);
     }
     return () => clearInterval(interval);
   }, [inView]);
@@ -76,6 +76,8 @@ const GallerySection = React.forwardRef<any>((props, ref) => {
               position="absolute"
               initial={{ opacity: 0 }}
               animate={{ opacity: activeIndex === index ? 1 : 0 }}
+              // @ts-ignore
+              transition={{ duration: 0.5 }}
               bgRepeat="no-repeat"
               bgSize="cover"
               bgPosition="center"
