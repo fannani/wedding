@@ -23,7 +23,7 @@ const ClosingSection = () => {
             height="100%"
             overflow="hidden"
             w="100%"
-            bgImage="linear-gradient(to bottom, rgba(255, 255,255,0.52), rgba(21, 19, 19, 0.90)), url('/assets/images/new/s1.jpeg')"
+            bgImage="linear-gradient(to bottom, rgba(255, 255,255,0.52), rgba(21, 19, 19, 0.90)), url('/assets/images/new/s1-crop.jpeg')"
             bgSize="cover"
             bgColor="#EFE8E4"
             alignItems="center"
@@ -31,7 +31,7 @@ const ClosingSection = () => {
           >
             <Flex
               direction="column"
-              mt="20"
+              mt="10"
               mx="10"
               alignItems="center"
               height="100%"

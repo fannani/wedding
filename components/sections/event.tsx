@@ -158,7 +158,7 @@ const EventSection = React.forwardRef<HTMLDivElement, EventSectionProps>(
                 >
                   <Button
                     colorScheme="primary"
-                    ml={[0, 5]}
+                    ml={0}
                     mt={3}
                     borderRadius="full"
                   >
