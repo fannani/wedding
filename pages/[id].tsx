@@ -285,7 +285,12 @@ const Invitation = ({ person }) => {
               }, 300);
             }}
           />
-          <Flex direction="column" alignItems="center">
+          <Flex
+            direction="column"
+            alignItems="center"
+            maxW="650px"
+            overflow="hidden"
+          >
             <BrideSection ref={brideControl.handleRef} />
             <EventSection ref={eventControl.handleRef} person={person} />
             <DateSection

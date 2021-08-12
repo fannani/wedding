@@ -172,7 +172,7 @@ url(/assets/images/top-right-side.png) no-repeat top right
             }}
           >
             kami menantikan kehadiran para keluarga dan sahabat untuk menjadi
-            saksi bahagia kami
+            saksi hari bahagia kami
           </MotionText>
         </Flex>
         <MotionText
