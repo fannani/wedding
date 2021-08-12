@@ -123,7 +123,7 @@ const EventSection = React.forwardRef<HTMLDivElement, EventSectionProps>(
                 justifyContent="center"
                 wrap="wrap"
                 alignItems="center"
-                direction={['column', 'row']}
+                direction={'column'}
               >
                 <Link
                   target="_blank"
