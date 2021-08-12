@@ -8,33 +8,40 @@ import {
   chakra,
 } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
 
 const photos = [
+  '/assets/images/new/s6.jpeg',
+  '/assets/images/new/s4.jpeg',
+  '/assets/images/new/s3.jpeg',
+  '/assets/images/new/s5.jpeg',
+  '/assets/images/new/s8.jpeg',
+  '/assets/images/tengah.jpeg',
   '/assets/images/g23.jpg',
   '/assets/images/g22.jpg',
-  '/assets/images/new/s3.jpeg',
-  '/assets/images/new/s4.jpeg',
-  '/assets/images/tengah.jpeg',
   '/assets/images/new/s7.jpeg',
-  '/assets/images/new/s5.jpeg',
-  '/assets/images/new/s6.jpeg',
-  '/assets/images/new/s8.jpeg',
 ];
 export const MotionFlex = motion<FlexProps>(Flex);
 
 const GallerySection = React.forwardRef<any>((props, ref) => {
   const [activeIndex, setActiveIndex] = React.useState(0);
+  const [refAnimation, inView] = useInView({ threshold: 0.2 });
+
   React.useEffect(() => {
-    const interval = setInterval(() => {
-      setActiveIndex((index) => {
-        if (index < photos.length - 1) {
-          return index + 1;
-        }
-        return 0;
-      });
-    }, 3000);
+    let interval;
+    if (inView) {
+      interval = setInterval(() => {
+        setActiveIndex((index) => {
+          if (index < photos.length - 1) {
+            return index + 1;
+          }
+          return 0;
+        });
+      }, 3000);
+    }
     return () => clearInterval(interval);
-  }, []);
+  }, [inView]);
+
   return (
     <Flex
       maxW="650px"
@@ -47,7 +54,7 @@ const GallerySection = React.forwardRef<any>((props, ref) => {
       alignItems="center"
       px="5"
     >
-      <Text fontFamily="Signatura" fontSize="36">
+      <Text fontFamily="Signatura" fontSize="36" ref={refAnimation}>
         Galeri
       </Text>
       <AspectRatio w="100%" ratio={0.64}>
