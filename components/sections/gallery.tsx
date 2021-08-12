@@ -13,7 +13,7 @@ const photos = [
   '/assets/images/g23.jpg',
   '/assets/images/g22.jpg',
   '/assets/images/new/s3.jpeg',
-  '/assets/images/new/tengah.jpeg',
+  '/assets/images/tengah.jpeg',
   '/assets/images/new/s7.jpeg',
   '/assets/images/new/s4.jpeg',
   '/assets/images/new/s5.jpeg',
