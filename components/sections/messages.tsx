@@ -44,13 +44,14 @@ const MessagesSection = () => {
       <Flex
         mt="3"
         height="100%"
-        overflow="scroll"
+        overflowY="scroll"
         p="5"
         rounded="lg"
         bgColor="primary.600"
         w="100%"
         boxShadow="xl"
         direction="column"
+        overflowX="hidden"
       >
         {isLoading ? (
           <Flex height="100%" justifyContent="center" alignItems="center">
