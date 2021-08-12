@@ -12,9 +12,9 @@ import { motion } from 'framer-motion';
 const photos = [
   '/assets/images/g23.jpg',
   '/assets/images/g22.jpg',
-  '/assets/images/new/s2.jpeg',
   '/assets/images/new/s3.jpeg',
   '/assets/images/new/s4.jpeg',
+  '/assets/images/new/tengah.jpeg',
   '/assets/images/new/s5.jpeg',
   '/assets/images/new/s6.jpeg',
   '/assets/images/new/s8.jpeg',
