@@ -82,7 +82,7 @@ const DateSection = React.forwardRef<HTMLDivElement, DateSectionProps>(
         setStatus(param);
         axios.post('/api/attendance', {
           id: person.id,
-          param,
+          status: param,
         });
         controls.start('afterSubmit');
       }
