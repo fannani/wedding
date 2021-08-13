@@ -97,7 +97,7 @@ const Invitation = ({ person }) => {
   const messagesControl = useSectionAnimation({ threshold: 0.15 });
   const [isMusicPlay, setIsMusicPlay] = React.useState(false);
   const [audio, setAudio] = React.useState();
-  // const [isSafari, setIsSafari] = React.useState(false);
+  // const [isSafari, setIsSafari] = React.useState()
   const [isShowContent, setIsShowContent] = React.useState(false);
   const boxRef = useRef();
   const { scrollY } = useElementScroll(boxRef);
@@ -123,12 +123,12 @@ const Invitation = ({ person }) => {
     }
   }, [isMusicPlay]);
 
-  // useEffect(() => {
-  //   if (isShowContent) {
-  //     // @ts-ignore
-  //     brideControl.ref.current.scrollIntoView({ behavior: 'smooth' });
-  //   }
-  // }, [isShowContent]);
+  useEffect(() => {
+    if (isShowContent) {
+      // @ts-ignore
+      brideControl.ref.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  }, [isShowContent]);
 
   useEffect(() => {
     // const browser = Bowser.getParser(window.navigator.userAgent);
@@ -279,20 +279,22 @@ const Invitation = ({ person }) => {
           <CoverSection
             person={person}
             onOpen={() => {
-              // if (!isDevelopment && !isSafari) {
-              //   document.body.requestFullscreen();
-              // }
+              if (!isDevelopment) {
+                try {
+                  document.body.requestFullscreen();
+                } catch {}
+              }
 
-              // setTimeout(() => {
-              setIsMusicPlay(true);
-              setIsShowContent(true);
-              //   if (isShowContent) {
-              // @ts-ignore
-              brideControl.ref.current.scrollIntoView({
-                behavior: 'smooth',
-              });
-              //   }
-              // }, 300);
+              setTimeout(() => {
+                setIsMusicPlay(true);
+                setIsShowContent(true);
+                if (isShowContent) {
+                  // @ts-ignore
+                  brideControl.ref.current.scrollIntoView({
+                    behavior: 'smooth',
+                  });
+                }
+              }, 300);
             }}
           />
           <Flex
