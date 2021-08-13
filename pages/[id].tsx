@@ -271,13 +271,16 @@ const Invitation = ({ person }) => {
           <CoverSection
             person={person}
             onOpen={() => {
-              const browser = Bowser.getParser(window.navigator.userAgent);
-              const isSafari = browser.satisfies({
-                safari: '>=8',
-              });
-              if (!isDevelopment && !isSafari) {
-                document.body.requestFullscreen();
+              if (process.browser) {
+                const browser = Bowser.getParser(window.navigator.userAgent);
+                const isSafari = browser.satisfies({
+                  safari: '>=8',
+                });
+                if (!isDevelopment && !isSafari) {
+                  document.body.requestFullscreen();
+                }
               }
+
               setTimeout(() => {
                 setIsMusicPlay(true);
                 setIsShowContent(true);
