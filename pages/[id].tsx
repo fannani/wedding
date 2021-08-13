@@ -272,10 +272,12 @@ const Invitation = ({ person }) => {
             onOpen={() => {
               if (!isDevelopment) {
                 var isSafari =
+                  // @ts-ignore
                   /constructor/i.test(window.HTMLElement) ||
                   (function (p) {
                     return p.toString() === '[object SafariRemoteNotification]';
                   })(
+                    // @ts-ignore
                     !window['safari'] ||
                       (typeof safari !== 'undefined' &&
                         window['safari'].pushNotification),
