@@ -36,6 +36,7 @@ import dayjs from 'dayjs';
 import 'dayjs/locale/id';
 import ClosingSection from '@/sections/closing';
 import Bowser from 'bowser';
+
 //@ts-ignore
 const browser = Bowser.getParser(window.navigator.userAgent);
 
