@@ -4,7 +4,7 @@ import { useInView } from 'react-intersection-observer';
 import { useAnimation, motion } from 'framer-motion';
 
 const photos = [
-  '/assets/images/g3.jpeg',
+  '/assets/images/nn.jpeg',
   '/assets/images/g1.jpeg',
   '/assets/images/g2.jpeg',
 ];
