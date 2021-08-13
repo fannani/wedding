@@ -35,7 +35,12 @@ import axios from 'axios';
 import dayjs from 'dayjs';
 import 'dayjs/locale/id';
 import ClosingSection from '@/sections/closing';
+import Bowser from 'bowser';
+const browser = Bowser.getParser(window.navigator.userAgent);
 
+const isSafari = browser.satisfies({
+  safari: '>=8',
+});
 dayjs.locale('id');
 export const MotionBox = motion<BoxProps>(Box);
 export const MotionFlex = motion<FlexProps>(Flex);
@@ -270,21 +275,8 @@ const Invitation = ({ person }) => {
           <CoverSection
             person={person}
             onOpen={() => {
-              if (!isDevelopment) {
-                var isSafari =
-                  // @ts-ignore
-                  /constructor/i.test(window.HTMLElement) ||
-                  (function (p) {
-                    return p.toString() === '[object SafariRemoteNotification]';
-                  })(
-                    // @ts-ignore
-                    !window['safari'] ||
-                      (typeof safari !== 'undefined' &&
-                        window['safari'].pushNotification),
-                  );
-                if (!isSafari) {
-                  document.body.requestFullscreen();
-                }
+              if (!isDevelopment && !isSafari) {
+                document.body.requestFullscreen();
               }
               setTimeout(() => {
                 setIsMusicPlay(true);
