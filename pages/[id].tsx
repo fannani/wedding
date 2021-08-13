@@ -35,7 +35,7 @@ import axios from 'axios';
 import dayjs from 'dayjs';
 import 'dayjs/locale/id';
 import ClosingSection from '@/sections/closing';
-import Bowser from 'bowser';
+// import Bowser from 'bowser';
 
 dayjs.locale('id');
 export const MotionBox = motion<BoxProps>(Box);
@@ -97,7 +97,7 @@ const Invitation = ({ person }) => {
   const messagesControl = useSectionAnimation({ threshold: 0.15 });
   const [isMusicPlay, setIsMusicPlay] = React.useState(false);
   const [audio, setAudio] = React.useState();
-  const [isSafari, setIsSafari] = React.useState(false);
+  // const [isSafari, setIsSafari] = React.useState(false);
   const [isShowContent, setIsShowContent] = React.useState(false);
   const boxRef = useRef();
   const { scrollY } = useElementScroll(boxRef);
@@ -123,20 +123,20 @@ const Invitation = ({ person }) => {
     }
   }, [isMusicPlay]);
 
-  useEffect(() => {
-    if (isShowContent) {
-      // @ts-ignore
-      brideControl.ref.current.scrollIntoView({ behavior: 'smooth' });
-    }
-  }, [isShowContent]);
+  // useEffect(() => {
+  //   if (isShowContent) {
+  //     // @ts-ignore
+  //     brideControl.ref.current.scrollIntoView({ behavior: 'smooth' });
+  //   }
+  // }, [isShowContent]);
 
   useEffect(() => {
-    const browser = Bowser.getParser(window.navigator.userAgent);
-    const checkIsSafari = browser.satisfies({
-      safari: '>=8',
-    });
+    // const browser = Bowser.getParser(window.navigator.userAgent);
+    // const checkIsSafari = browser.satisfies({
+    //   safari: '>=8',
+    // });
 
-    setIsSafari(checkIsSafari);
+    // setIsSafari(checkIsSafari);
 
     const song = new Audio('/assets/music.mp3');
     // @ts-ignore
@@ -279,20 +279,20 @@ const Invitation = ({ person }) => {
           <CoverSection
             person={person}
             onOpen={() => {
-              if (!isDevelopment && !isSafari) {
-                document.body.requestFullscreen();
-              }
+              // if (!isDevelopment && !isSafari) {
+              //   document.body.requestFullscreen();
+              // }
 
-              setTimeout(() => {
-                setIsMusicPlay(true);
-                setIsShowContent(true);
-                if (isShowContent) {
-                  // @ts-ignore
-                  brideControl.ref.current.scrollIntoView({
-                    behavior: 'smooth',
-                  });
-                }
-              }, 300);
+              // setTimeout(() => {
+              setIsMusicPlay(true);
+              setIsShowContent(true);
+              //   if (isShowContent) {
+              // @ts-ignore
+              brideControl.ref.current.scrollIntoView({
+                behavior: 'smooth',
+              });
+              //   }
+              // }, 300);
             }}
           />
           <Flex
