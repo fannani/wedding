@@ -150,7 +150,7 @@ url(/assets/images/top-right-side.png) no-repeat top right
             }}
           >
             siang dan malam berlalu begitu cepat diantara saat-saat mendebarkan
-            yang belum pernah kami rasakan sebelumnnya
+            yang belum pernah kami rasakan sebelumnya
           </MotionText>
           <MotionText
             mt="3"
