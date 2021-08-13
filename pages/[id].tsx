@@ -97,6 +97,7 @@ const Invitation = ({ person }) => {
   const messagesControl = useSectionAnimation({ threshold: 0.15 });
   const [isMusicPlay, setIsMusicPlay] = React.useState(false);
   const [audio, setAudio] = React.useState();
+  const [isSafari, setIsSafari] = React.useState(false);
   const [isShowContent, setIsShowContent] = React.useState(false);
   const boxRef = useRef();
   const { scrollY } = useElementScroll(boxRef);
@@ -130,6 +131,13 @@ const Invitation = ({ person }) => {
   }, [isShowContent]);
 
   useEffect(() => {
+    const browser = Bowser.getParser(window.navigator.userAgent);
+    const checkIsSafari = browser.satisfies({
+      safari: '>=8',
+    });
+
+    setIsSafari(checkIsSafari);
+
     const song = new Audio('/assets/music.mp3');
     // @ts-ignore
 
@@ -271,14 +279,8 @@ const Invitation = ({ person }) => {
           <CoverSection
             person={person}
             onOpen={() => {
-              if (process.browser) {
-                const browser = Bowser.getParser(window.navigator.userAgent);
-                const isSafari = browser.satisfies({
-                  safari: '>=8',
-                });
-                if (!isDevelopment && !isSafari) {
-                  document.body.requestFullscreen();
-                }
+              if (!isDevelopment && !isSafari) {
+                document.body.requestFullscreen();
               }
 
               setTimeout(() => {
